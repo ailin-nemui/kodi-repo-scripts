@@ -107,7 +107,7 @@ class lm4:
 				"genre": 				metadata.get('genres',''),
 				"year": 				metadata.get('year',''),
 				"premiered": 		metadata.get('premiered',''),
-				"premiered": 		metadata.get('originaltitle',''),
+				"originaltitle": 		metadata.get('originaltitle',''),
 				})
 
 			liz=xbmcgui.ListItem(name)
@@ -128,7 +128,7 @@ class lm4:
 					
 			ok=True
 
-			if item['type'] in ['audio','songs']:
+			if item.get('type',None) in ['audio','songs']:
 				liz.setInfo( type="music", infoLabels=ilabels)
 			else:
 				liz.setInfo( type="Video", infoLabels=ilabels)
@@ -215,7 +215,7 @@ class lm4:
 				streamType = 'AUDIO'
 		listitem = xbmcgui.ListItem(path=url)
 		if streamType == 'DASH':
-			listitem.setProperty('inputstreamaddon', 'inputstream.adaptive')
+			listitem.setProperty('inputstream', 'inputstream.adaptive')
 			listitem.setProperty('inputstream.adaptive.manifest_type', 'mpd')
 			if 'licenseserverurl' in item:
 				listitem.setProperty('inputstream.adaptive.license_type', 'com.widevine.alpha')

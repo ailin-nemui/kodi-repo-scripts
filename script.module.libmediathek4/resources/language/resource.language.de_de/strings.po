@@ -1,7 +1,7 @@
 # KODI Media Center language file
 # Addon Name: libmediathek4
 # Addon id: script.module.libmediathek4
-# Addon version: 1.0.0
+# Addon version: 1.0.1
 # Addon Provider: sarbes
 msgid ""
 msgstr ""
